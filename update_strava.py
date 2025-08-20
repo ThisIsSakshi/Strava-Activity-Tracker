@@ -1,4 +1,5 @@
 import requests
+import config
 import re
 import os
 
@@ -17,7 +18,6 @@ res = requests.post(
         "refresh_token": REFRESH_TOKEN
     },
 )
-print(res.status_code, res.text)
 res.raise_for_status()
 ACCESS_TOKEN = res.json()["access_token"]
 
@@ -27,12 +27,9 @@ activities = requests.get("https://www.strava.com/api/v3/athlete/activities", he
 
 latest = activities[0]
 activity_text = f"🚴 **{latest['name']}** — {latest['distance']/1000:.2f} km in {latest['moving_time']//60} min 🕒"
-
 # 3. Update README.md
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
-new_readme = re.sub(r"\{\{strava_activity\}\}", activity_text, readme)
-
 with open("README.md", "w", encoding="utf-8") as f:
-    f.write(new_readme)
+    f.write(activity_text)
