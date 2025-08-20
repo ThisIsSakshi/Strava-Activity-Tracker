@@ -14,9 +14,10 @@ res = requests.post(
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,
         "grant_type": "refresh_token",
-        "refresh_token": REFRESH_TOKEN,
+        "refresh_token": REFRESH_TOKEN
     },
 )
+print(res.status_code, res.text)
 res.raise_for_status()
 ACCESS_TOKEN = res.json()["access_token"]
 
