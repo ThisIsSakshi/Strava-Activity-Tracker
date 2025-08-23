@@ -26,13 +26,13 @@ headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
 activities = requests.get("https://www.strava.com/api/v3/athlete/activities", headers=headers).json()
 
 latest = activities[0]
-print('\n\nstrava data',latest)
+
 activity_text = f"🚴 **{latest['name']}** — {latest['distance']/1000:.2f} km in {latest['moving_time']//60} min 🕒"
 # 3. Update README.md
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
-print('\n\nactivity_text',activity_text)
+new_readme = re.sub(r"\{\{strava_activity\}\}", activity_text, readme)
 
 with open("README.md", "w", encoding="utf-8") as f:
-    f.write(activity_text)
+    f.write(new_readme)
