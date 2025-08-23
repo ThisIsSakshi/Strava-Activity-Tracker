@@ -1,2 +1,1 @@
-# My Strava Activity
-{{strava_activity}}
+🚴 **Night Run** — 3.00 km in 20 min 🕒
