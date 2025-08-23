@@ -32,5 +32,7 @@ activity_text = f"🚴 **{latest['name']}** — {latest['distance']/1000:.2f} km
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
+print('\n\nactivity_text',activity_text)
+
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(activity_text)
