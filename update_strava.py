@@ -32,7 +32,7 @@ activity_text = f"🚴 **{latest['name']}** — {latest['distance']/1000:.2f} km
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
-new_readme = re.sub(r"\{\{strava_activity\}\}", activity_text, readme)
+new_readme = activity_text
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_readme)
