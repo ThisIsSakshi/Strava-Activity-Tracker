@@ -2,6 +2,7 @@ import requests
 import config
 import re
 import os
+from datetime import datetime
 
 # Load secrets
 CLIENT_ID = os.environ["STRAVA_CLIENT_ID"]
@@ -26,8 +27,19 @@ headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
 activities = requests.get("https://www.strava.com/api/v3/athlete/activities", headers=headers).json()
 
 latest = activities[0]
+activity_date = datetime.strptime(latest['start_date'], "%Y-%m-%dT%H:%M:%SZ")
+formatted_date = activity_date.strftime("%d%%20%b%%20%Y")
+activity_time = int(latest['moving_time'])//60
 
-activity_text = f"🚴 **{latest['name']}** — {latest['distance']/1000:.2f} km in {latest['moving_time']//60} min 🕒"
+activity_text = f"""
+### 🏃 Latest Strava Activity
+#### {latest['name']}
+![Activity](https://img.shields.io/badge/Run-{round(int(latest['distance'])/1000,2)}km-blue?style=for-the-badge&logo=strava)
+![Time](https://img.shields.io/badge/⏱️Time-{activity_time}min-pink?style=for-the-badge)
+![Elevation](https://img.shields.io/badge/⛰️Elevation-{latest['total_elevation_gain']}m-green?style=for-the-badge)
+![Kudos](https://img.shields.io/badge/👏Kudos-{latest['kudos_count']}-red?style=for-the-badge)
+![Date](https://img.shields.io/badge/📅Date-{formatted_date}-yellow?style=for-the-badge)
+"""
 # 3. Update README.md
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
