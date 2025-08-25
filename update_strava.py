@@ -35,10 +35,10 @@ activity_text = f"""
 ### 🏃 Latest Strava Activity
 #### {latest['name']}
 ![Activity](https://img.shields.io/badge/Run-{round(int(latest['distance'])/1000,2)}km-blue?style=for-the-badge&logo=strava)
-![Time](https://img.shields.io/badge/⏱️Time-{activity_time}min-pink?style=for-the-badge)
-![Elevation](https://img.shields.io/badge/⛰️Elevation-{latest['total_elevation_gain']}m-green?style=for-the-badge)
-![Kudos](https://img.shields.io/badge/👏Kudos-{latest['kudos_count']}-red?style=for-the-badge)
-![Date](https://img.shields.io/badge/📅Date-{formatted_date}-yellow?style=for-the-badge)
+![Time](https://img.shields.io/badge/⏱️_Time-{activity_time}min-pink?style=for-the-badge)
+![Elevation](https://img.shields.io/badge/⛰️_Elevation-{latest['total_elevation_gain']}m-green?style=for-the-badge)
+![Kudos](https://img.shields.io/badge/👏_Kudos-{latest['kudos_count']}-red?style=for-the-badge)
+![Date](https://img.shields.io/badge/📅_Date-{formatted_date}-yellow?style=for-the-badge)
 """
 # 3. Update README.md
 with open("README.md", "r", encoding="utf-8") as f:
