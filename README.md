@@ -1,8 +1,8 @@
 
 ### 🏃 Latest Strava Activity
-#### Morning Walk
-![Activity](https://img.shields.io/badge/Run-3.0km-blue?style=for-the-badge&logo=strava)
-![Time](https://img.shields.io/badge/⏱️_Time-47min-pink?style=for-the-badge)
-![Elevation](https://img.shields.io/badge/⛰️_Elevation-16.2m-green?style=for-the-badge)
-![Kudos](https://img.shields.io/badge/👏_Kudos-5-red?style=for-the-badge)
-![Date](https://img.shields.io/badge/📅_Date-07%20Dec%202025-yellow?style=for-the-badge)
+#### Evening Walk
+![Activity](https://img.shields.io/badge/Run-2.0km-blue?style=for-the-badge&logo=strava)
+![Time](https://img.shields.io/badge/⏱️_Time-39min-pink?style=for-the-badge)
+![Elevation](https://img.shields.io/badge/⛰️_Elevation-21.2m-green?style=for-the-badge)
+![Kudos](https://img.shields.io/badge/👏_Kudos-2-red?style=for-the-badge)
+![Date](https://img.shields.io/badge/📅_Date-08%20Dec%202025-yellow?style=for-the-badge)
